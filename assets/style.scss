@@ -1,0 +1,119 @@
+$card-color: #F8E2D8;
+$shadow-color: #B99888;
+$secondary-color: #89B1A0;
+$font: "Lato", sans-serif;
+
+* {
+    margin:0;
+}
+
+body {
+    font: {
+        size: 1rem;
+        family: $font;
+        weight:300;
+    }
+    height: 100vh; 
+    display : flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+.sticker {
+    font-weight:normal;
+    text-align:center;
+    background-color: $secondary-color;
+    display:inline-block;
+}
+
+.date {
+    position: absolute;
+    height:50px;
+    width:50px;
+    top: 15px;
+    right: 15px;
+    border-radius: 50%;
+}
+
+.photos {
+    max-width:50%;
+    display:inline-block;
+    position:absolute;
+    left:0;
+    top: -12px;
+    padding:5px;
+    z-index:1;
+}
+
+.card {
+    background-color: $card-color;
+    box-shadow:5px 5px 5px $shadow-color;
+    border-radius:1rem;
+    max-height: 70%;
+    max-width: 30%;
+    height: 100%;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    :hover {
+        // TO DO: ANIMATIONS
+    }
+}
+
+figure {
+    flex:60%;
+    height:100%;
+    width:auto;
+    display:flex;
+    img {
+            height:100%;
+            width:100%;
+            display: block;
+            object-fit:cover;
+            height:auto;
+        }
+    }
+
+.card_text {
+    flex:30%;
+    height:100%;
+    width:auto;
+    display:flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    position:relative;
+    .text {
+        padding : 25px 20px;
+        h1 {
+            text-transform:uppercase;
+            font-size:2rem;
+            font-weight:400;
+            margin-bottom:8px;
+        }
+        h2 {
+            margin-bottom:8px;
+            color: $shadow-color;                
+            font: {
+                size:1.5rem;
+            }
+        }
+        p {
+            text-align:justify;
+            display:none;
+        }
+    }
+}
+.card_footer {
+    flex:10%;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+    height:100%;
+    width:auto;
+    p {
+        flex:1;
+        font-size:14px;
+    }
+}
