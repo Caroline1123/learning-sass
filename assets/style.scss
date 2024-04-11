@@ -24,6 +24,7 @@ body {
     text-align:center;
     background-color: $secondary-color;
     display:inline-block;
+    z-index:1;
 }
 
 .date {
@@ -41,7 +42,7 @@ body {
     position:absolute;
     left:0;
     top: -12px;
-    padding:5px;
+    padding:5px 10px;
     z-index:1;
 }
 
@@ -57,10 +58,23 @@ body {
     flex-direction: column;
     overflow: hidden;
     position: relative;
-    :hover {
-        // TO DO: ANIMATIONS
+    &:hover{
+        box-shadow:7px 7px 7px $shadow-color;
+            figure >img {
+                filter:grayscale(50%);
+                transform : scale(105%);
+            }
+            .card_text {
+                transform:translateY(-30%);
+                p {
+                    display: block;
+                }
+            }
+            .card_footer {
+                transform:translateY(-30%);
+            }
+        }
     }
-}
 
 figure {
     flex:60%;
@@ -79,11 +93,13 @@ figure {
 .card_text {
     flex:30%;
     height:100%;
+    background-color: #F8E2D8;
     width:auto;
     display:flex;
     flex-direction: column;
     box-sizing: border-box;
     position:relative;
+    z-index:2;
     .text {
         padding : 25px 20px;
         h1 {
@@ -105,11 +121,12 @@ figure {
         }
     }
 }
+
 .card_footer {
     flex:10%;
     display:flex;
     align-items:flex-end;
-    justify-content:center;
+    text-align: center;
     height:100%;
     width:auto;
     p {

@@ -17,6 +17,7 @@ body {
   text-align: center;
   background-color: #89B1A0;
   display: inline-block;
+  z-index: 1;
 }
 
 .date {
@@ -34,7 +35,7 @@ body {
   position: absolute;
   left: 0;
   top: -12px;
-  padding: 5px;
+  padding: 5px 10px;
   z-index: 1;
 }
 
@@ -51,6 +52,23 @@ body {
   overflow: hidden;
   position: relative;
 }
+.card:hover {
+  box-shadow: 7px 7px 7px #B99888;
+}
+.card:hover figure > img {
+  filter: grayscale(50%);
+  transform: scale(105%);
+}
+.card:hover .card_text {
+  transform: translateY(-30%);
+}
+.card:hover .card_text p {
+  display: block;
+}
+.card:hover .card_footer {
+  transform: translateY(-30%);
+}
+
 figure {
   flex: 60%;
   height: 100%;
@@ -69,11 +87,13 @@ figure img {
 .card_text {
   flex: 30%;
   height: 100%;
+  background-color: #F8E2D8;
   width: auto;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
+  z-index: 2;
 }
 .card_text .text {
   padding: 25px 20px;
@@ -98,7 +118,7 @@ figure img {
   flex: 10%;
   display: flex;
   align-items: flex-end;
-  justify-content: center;
+  text-align: center;
   height: 100%;
   width: auto;
 }
